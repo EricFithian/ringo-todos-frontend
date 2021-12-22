@@ -34,16 +34,16 @@ function App(props) {
 
   // state to hold list of todos
   const [posts, setPosts] = useState([]);
-
+  
   // an object that represents a null todo as a starting point
   const nullTodo = {
     subject: "",
     details: "",
   }
-
+  
+  const [targetTodo, setTargetTodo] = useState(nullTodo)
   // const stat to hold todo for editing
 
-  const [targetTodo, setTargetTodo] = useState(nullTodo)
 
   ///////////////
   // Functions
@@ -94,6 +94,7 @@ function App(props) {
     getTodos();
     props.history.push("/");
   };
+
   ///////////////
   // useEffects
   ///////////////
@@ -127,7 +128,7 @@ function App(props) {
             {...rp} 
             posts={posts} 
             edit={getTargetTodo}
-            delete={deleteTodo}
+            deleteTodo={deleteTodo}
           />;
           }}
         />
