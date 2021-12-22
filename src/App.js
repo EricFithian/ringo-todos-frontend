@@ -83,6 +83,17 @@ function App(props) {
     // get updated list of todos
     getTodos();
   }
+
+  // Function to edit todo on form submission
+  const deleteTodo = async (todo) => {
+    const response = await fetch(url + todo.id + "/", {
+      method: "delete",
+    });
+
+    // get updated list of todos
+    getTodos();
+    props.history.push("/");
+  };
   ///////////////
   // useEffects
   ///////////////
@@ -116,6 +127,7 @@ function App(props) {
             {...rp} 
             posts={posts} 
             edit={getTargetTodo}
+            delete={deleteTodo}
           />;
           }}
         />
