@@ -112,45 +112,45 @@ function App(props) {
       <h1 style={h1}>My Todo List</h1>
       <Link to="/new"><button style={button}>Create New Todo</button></Link>
       <Switch>
-        {/* INDEX PAGE */}
-        <Route
-          exact
-          path="/"
-          render={(rp) => {
-            return <AllPosts {...rp} posts={posts} />;
-          }}
-        />
-        {/* SHOW PAGE */}
-        <Route
-          path="/post/:id"
-          render={(rp) => {
-            return <SinglePost 
-            {...rp} 
-            posts={posts} 
-            edit={getTargetTodo}
-            deleteTodo={deleteTodo}
-          />;
-          }}
-        />
-        {/* NEW AND EDIT FORM PAGES */}
-        <Route
-          path="/new"
-          render={(rp) => {
-            return <Form {...rp} 
-            initialTodo={nullTodo}
-            handleSubmit={addTodos}
-            buttonLabel="Add to my list"
-          />;
-          }}
-        />
-        <Route
-          path="/edit"
-          render={(rp) => {
-            return <Form 
-            {...rp} 
-            initialTodo={targetTodo}
-            handleSubmit={updateTodo}
-            buttonLabel="Edit"
+          {/* INDEX PAGE */}
+          <Route
+            exact
+            path="/"
+            render={(rp) => {
+              return <AllPosts {...rp} posts={posts} />;
+            }}
+          />
+          {/* SHOW PAGE */}
+          <Route
+            path="/post/:id"
+            render={(rp) => {
+              return <SinglePost 
+              {...rp} 
+              posts={posts} 
+              edit={getTargetTodo}
+              deleteTodo={deleteTodo}
+            />;
+            }}
+          />
+          {/* NEW AND EDIT FORM PAGES */}
+          <Route
+            path="/new"
+            render={(rp) => {
+              return <Form {...rp} 
+              initialTodo={nullTodo}
+              handleSubmit={addTodos}
+              buttonLabel="Add to my list"
+            />;
+            }}
+          />
+          <Route
+            path="/edit"
+            render={(rp) => {
+              return <Form 
+              {...rp} 
+              initialTodo={targetTodo}
+              handleSubmit={updateTodo}
+              buttonLabel="Edit"
             />;
           }}
         />
